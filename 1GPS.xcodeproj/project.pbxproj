@@ -1,0 +1,604 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		222C1CE32B6FC47A00586C30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222C1CE22B6FC47A00586C30 /* AppDelegate.swift */; };
+		222C1CE52B6FC47A00586C30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222C1CE42B6FC47A00586C30 /* SceneDelegate.swift */; };
+		222C1CE72B6FC47A00586C30 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222C1CE62B6FC47A00586C30 /* MainVC.swift */; };
+		222C1CEC2B6FC47C00586C30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 222C1CEB2B6FC47C00586C30 /* Assets.xcassets */; };
+		222C1CEF2B6FC47C00586C30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 222C1CED2B6FC47C00586C30 /* LaunchScreen.storyboard */; };
+		222C1CFA2B6FC94400586C30 /* TrackerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222C1CF92B6FC94400586C30 /* TrackerModel.swift */; };
+		222C1CFD2B6FC95900586C30 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 222C1CFC2B6FC95900586C30 /* SnapKit */; };
+		222C1D002B6FC96700586C30 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 222C1CFF2B6FC96700586C30 /* Alamofire */; };
+		222C1D032B6FCE2B00586C30 /* TrackDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222C1D022B6FCE2B00586C30 /* TrackDatasource.swift */; };
+		222C1D052B6FD52900586C30 /* DS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222C1D042B6FD52900586C30 /* DS.swift */; };
+		222C1D072B6FD6A200586C30 /* ParamsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222C1D062B6FD6A200586C30 /* ParamsBuilder.swift */; };
+		222C1D0A2B6FDB4900586C30 /* UIColor_HEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222C1D092B6FDB4900586C30 /* UIColor_HEX.swift */; };
+		222C1D0C2B6FDE9200586C30 /* UITextField+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222C1D0B2B6FDE9200586C30 /* UITextField+Image.swift */; };
+		222C1D0E2B6FDFB300586C30 /* UIViewController_DissmissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222C1D0D2B6FDFB300586C30 /* UIViewController_DissmissKeyboard.swift */; };
+		222C1D102B6FFB4500586C30 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222C1D0F2B6FFB4500586C30 /* MenuVC.swift */; };
+		222C1D142B700AB200586C30 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222C1D132B700AB200586C30 /* CustomAlertView.swift */; };
+		222C1D172B700ACB00586C30 /* SwiftMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 222C1D162B700ACB00586C30 /* SwiftMessages */; };
+		222C1D1D2B701C6E00586C30 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 222C1D1C2B701C6E00586C30 /* IQKeyboardManagerSwift */; };
+		222C1D1F2B70381D00586C30 /* loader.json in Resources */ = {isa = PBXBuildFile; fileRef = 222C1D1E2B70381D00586C30 /* loader.json */; };
+		222C1D222B70389500586C30 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 222C1D212B70389500586C30 /* Lottie */; };
+		222C1D242B703EA200586C30 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222C1D232B703EA200586C30 /* MainTabBarController.swift */; };
+		222C1D262B7107B900586C30 /* MapsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222C1D252B7107B900586C30 /* MapsVC.swift */; };
+		222C1D292B71081700586C30 /* TrackerListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222C1D282B71081700586C30 /* TrackerListVC.swift */; };
+		222C1D2B2B71086200586C30 /* RouteTempVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222C1D2A2B71086200586C30 /* RouteTempVC.swift */; };
+		222C1D2D2B710FE600586C30 /* UIImage_Resized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222C1D2C2B710FE600586C30 /* UIImage_Resized.swift */; };
+		222C1D2F2B71124A00586C30 /* SimCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222C1D2E2B71124A00586C30 /* SimCardVC.swift */; };
+		222C1D322B711CB700586C30 /* GoogleMaps in Frameworks */ = {isa = PBXBuildFile; productRef = 222C1D312B711CB700586C30 /* GoogleMaps */; };
+		222C1D342B711CB700586C30 /* GoogleMapsBase in Frameworks */ = {isa = PBXBuildFile; productRef = 222C1D332B711CB700586C30 /* GoogleMapsBase */; };
+		222C1D362B711CB700586C30 /* GoogleMapsCore in Frameworks */ = {isa = PBXBuildFile; productRef = 222C1D352B711CB700586C30 /* GoogleMapsCore */; };
+		222C1D3F2B717EA900586C30 /* CSVToJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222C1D3E2B717EA900586C30 /* CSVToJSONParser.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		222C1CDF2B6FC47A00586C30 /* 1GPS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 1GPS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		222C1CE22B6FC47A00586C30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		222C1CE42B6FC47A00586C30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		222C1CE62B6FC47A00586C30 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		222C1CEB2B6FC47C00586C30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		222C1CEE2B6FC47C00586C30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		222C1CF02B6FC47C00586C30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		222C1CF92B6FC94400586C30 /* TrackerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerModel.swift; sourceTree = "<group>"; };
+		222C1D022B6FCE2B00586C30 /* TrackDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDatasource.swift; sourceTree = "<group>"; };
+		222C1D042B6FD52900586C30 /* DS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DS.swift; sourceTree = "<group>"; };
+		222C1D062B6FD6A200586C30 /* ParamsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsBuilder.swift; sourceTree = "<group>"; };
+		222C1D092B6FDB4900586C30 /* UIColor_HEX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor_HEX.swift; sourceTree = "<group>"; };
+		222C1D0B2B6FDE9200586C30 /* UITextField+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Image.swift"; sourceTree = "<group>"; };
+		222C1D0D2B6FDFB300586C30 /* UIViewController_DissmissKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_DissmissKeyboard.swift; sourceTree = "<group>"; };
+		222C1D0F2B6FFB4500586C30 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		222C1D132B700AB200586C30 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
+		222C1D1E2B70381D00586C30 /* loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loader.json; sourceTree = "<group>"; };
+		222C1D232B703EA200586C30 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		222C1D252B7107B900586C30 /* MapsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsVC.swift; sourceTree = "<group>"; };
+		222C1D282B71081700586C30 /* TrackerListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerListVC.swift; sourceTree = "<group>"; };
+		222C1D2A2B71086200586C30 /* RouteTempVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTempVC.swift; sourceTree = "<group>"; };
+		222C1D2C2B710FE600586C30 /* UIImage_Resized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage_Resized.swift; sourceTree = "<group>"; };
+		222C1D2E2B71124A00586C30 /* SimCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimCardVC.swift; sourceTree = "<group>"; };
+		222C1D3E2B717EA900586C30 /* CSVToJSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVToJSONParser.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		222C1CDC2B6FC47A00586C30 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				222C1D222B70389500586C30 /* Lottie in Frameworks */,
+				222C1D342B711CB700586C30 /* GoogleMapsBase in Frameworks */,
+				222C1CFD2B6FC95900586C30 /* SnapKit in Frameworks */,
+				222C1D322B711CB700586C30 /* GoogleMaps in Frameworks */,
+				222C1D1D2B701C6E00586C30 /* IQKeyboardManagerSwift in Frameworks */,
+				222C1D362B711CB700586C30 /* GoogleMapsCore in Frameworks */,
+				222C1D172B700ACB00586C30 /* SwiftMessages in Frameworks */,
+				222C1D002B6FC96700586C30 /* Alamofire in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		222C1CD62B6FC47A00586C30 = {
+			isa = PBXGroup;
+			children = (
+				222C1CE12B6FC47A00586C30 /* 1GPS */,
+				222C1CE02B6FC47A00586C30 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		222C1CE02B6FC47A00586C30 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				222C1CDF2B6FC47A00586C30 /* 1GPS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		222C1CE12B6FC47A00586C30 /* 1GPS */ = {
+			isa = PBXGroup;
+			children = (
+				222C1CE22B6FC47A00586C30 /* AppDelegate.swift */,
+				222C1CE42B6FC47A00586C30 /* SceneDelegate.swift */,
+				222C1D182B7017CE00586C30 /* Methods */,
+				222C1D082B6FDB3500586C30 /* Extensions */,
+				222C1D012B6FCDD100586C30 /* Services */,
+				222C1CF82B6FC88800586C30 /* Models */,
+				222C1D122B700A9400586C30 /* Views */,
+				222C1CF72B6FC87000586C30 /* ViewControllers */,
+				222C1CF62B6FC7D400586C30 /* DesignSystem */,
+				222C1CED2B6FC47C00586C30 /* LaunchScreen.storyboard */,
+				222C1CF02B6FC47C00586C30 /* Info.plist */,
+			);
+			path = 1GPS;
+			sourceTree = "<group>";
+		};
+		222C1CF62B6FC7D400586C30 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				222C1CEB2B6FC47C00586C30 /* Assets.xcassets */,
+				222C1D1E2B70381D00586C30 /* loader.json */,
+				222C1D042B6FD52900586C30 /* DS.swift */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		222C1CF72B6FC87000586C30 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				222C1CE62B6FC47A00586C30 /* MainVC.swift */,
+				222C1D0F2B6FFB4500586C30 /* MenuVC.swift */,
+				222C1D252B7107B900586C30 /* MapsVC.swift */,
+				222C1D282B71081700586C30 /* TrackerListVC.swift */,
+				222C1D2A2B71086200586C30 /* RouteTempVC.swift */,
+				222C1D2E2B71124A00586C30 /* SimCardVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		222C1CF82B6FC88800586C30 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				222C1CF92B6FC94400586C30 /* TrackerModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		222C1D012B6FCDD100586C30 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				222C1D022B6FCE2B00586C30 /* TrackDatasource.swift */,
+				222C1D062B6FD6A200586C30 /* ParamsBuilder.swift */,
+				222C1D3E2B717EA900586C30 /* CSVToJSONParser.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		222C1D082B6FDB3500586C30 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				222C1D092B6FDB4900586C30 /* UIColor_HEX.swift */,
+				222C1D0B2B6FDE9200586C30 /* UITextField+Image.swift */,
+				222C1D0D2B6FDFB300586C30 /* UIViewController_DissmissKeyboard.swift */,
+				222C1D2C2B710FE600586C30 /* UIImage_Resized.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		222C1D122B700A9400586C30 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				222C1D132B700AB200586C30 /* CustomAlertView.swift */,
+				222C1D232B703EA200586C30 /* MainTabBarController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		222C1D182B7017CE00586C30 /* Methods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Methods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		222C1CDE2B6FC47A00586C30 /* 1GPS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 222C1CF32B6FC47C00586C30 /* Build configuration list for PBXNativeTarget "1GPS" */;
+			buildPhases = (
+				222C1CDB2B6FC47A00586C30 /* Sources */,
+				222C1CDC2B6FC47A00586C30 /* Frameworks */,
+				222C1CDD2B6FC47A00586C30 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = 1GPS;
+			packageProductDependencies = (
+				222C1CFC2B6FC95900586C30 /* SnapKit */,
+				222C1CFF2B6FC96700586C30 /* Alamofire */,
+				222C1D162B700ACB00586C30 /* SwiftMessages */,
+				222C1D1C2B701C6E00586C30 /* IQKeyboardManagerSwift */,
+				222C1D212B70389500586C30 /* Lottie */,
+				222C1D312B711CB700586C30 /* GoogleMaps */,
+				222C1D332B711CB700586C30 /* GoogleMapsBase */,
+				222C1D352B711CB700586C30 /* GoogleMapsCore */,
+			);
+			productName = 1GPS;
+			productReference = 222C1CDF2B6FC47A00586C30 /* 1GPS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		222C1CD72B6FC47A00586C30 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					222C1CDE2B6FC47A00586C30 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = 222C1CDA2B6FC47A00586C30 /* Build configuration list for PBXProject "1GPS" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 222C1CD62B6FC47A00586C30;
+			packageReferences = (
+				222C1CFB2B6FC95900586C30 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				222C1CFE2B6FC96700586C30 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				222C1D152B700ACB00586C30 /* XCRemoteSwiftPackageReference "SwiftMessages" */,
+				222C1D1B2B701C6E00586C30 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				222C1D202B70389500586C30 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				222C1D302B711CB600586C30 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */,
+			);
+			productRefGroup = 222C1CE02B6FC47A00586C30 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				222C1CDE2B6FC47A00586C30 /* 1GPS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		222C1CDD2B6FC47A00586C30 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				222C1D1F2B70381D00586C30 /* loader.json in Resources */,
+				222C1CEF2B6FC47C00586C30 /* LaunchScreen.storyboard in Resources */,
+				222C1CEC2B6FC47C00586C30 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		222C1CDB2B6FC47A00586C30 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				222C1CE72B6FC47A00586C30 /* MainVC.swift in Sources */,
+				222C1D032B6FCE2B00586C30 /* TrackDatasource.swift in Sources */,
+				222C1D072B6FD6A200586C30 /* ParamsBuilder.swift in Sources */,
+				222C1D052B6FD52900586C30 /* DS.swift in Sources */,
+				222C1D292B71081700586C30 /* TrackerListVC.swift in Sources */,
+				222C1CE32B6FC47A00586C30 /* AppDelegate.swift in Sources */,
+				222C1D3F2B717EA900586C30 /* CSVToJSONParser.swift in Sources */,
+				222C1D2D2B710FE600586C30 /* UIImage_Resized.swift in Sources */,
+				222C1D0C2B6FDE9200586C30 /* UITextField+Image.swift in Sources */,
+				222C1D2F2B71124A00586C30 /* SimCardVC.swift in Sources */,
+				222C1D242B703EA200586C30 /* MainTabBarController.swift in Sources */,
+				222C1D142B700AB200586C30 /* CustomAlertView.swift in Sources */,
+				222C1D102B6FFB4500586C30 /* MenuVC.swift in Sources */,
+				222C1D2B2B71086200586C30 /* RouteTempVC.swift in Sources */,
+				222C1D0E2B6FDFB300586C30 /* UIViewController_DissmissKeyboard.swift in Sources */,
+				222C1D0A2B6FDB4900586C30 /* UIColor_HEX.swift in Sources */,
+				222C1CFA2B6FC94400586C30 /* TrackerModel.swift in Sources */,
+				222C1CE52B6FC47A00586C30 /* SceneDelegate.swift in Sources */,
+				222C1D262B7107B900586C30 /* MapsVC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		222C1CED2B6FC47C00586C30 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				222C1CEE2B6FC47C00586C30 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		222C1CF12B6FC47C00586C30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		222C1CF22B6FC47C00586C30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		222C1CF42B6FC47C00586C30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5PF29L68XS;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = 1GPS/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Dmytro-Samoileko.-GPS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		222C1CF52B6FC47C00586C30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5PF29L68XS;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = 1GPS/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Dmytro-Samoileko.-GPS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		222C1CDA2B6FC47A00586C30 /* Build configuration list for PBXProject "1GPS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				222C1CF12B6FC47C00586C30 /* Debug */,
+				222C1CF22B6FC47C00586C30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		222C1CF32B6FC47C00586C30 /* Build configuration list for PBXNativeTarget "1GPS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				222C1CF42B6FC47C00586C30 /* Debug */,
+				222C1CF52B6FC47C00586C30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		222C1CFB2B6FC95900586C30 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.0;
+			};
+		};
+		222C1CFE2B6FC96700586C30 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
+		222C1D152B700ACB00586C30 /* XCRemoteSwiftPackageReference "SwiftMessages" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftKickMobile/SwiftMessages";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.9;
+			};
+		};
+		222C1D1B2B701C6E00586C30 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.1;
+			};
+		};
+		222C1D202B70389500586C30 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.4.0;
+			};
+		};
+		222C1D302B711CB600586C30 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googlemaps/ios-maps-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.3.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		222C1CFC2B6FC95900586C30 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 222C1CFB2B6FC95900586C30 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		222C1CFF2B6FC96700586C30 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 222C1CFE2B6FC96700586C30 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		222C1D162B700ACB00586C30 /* SwiftMessages */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 222C1D152B700ACB00586C30 /* XCRemoteSwiftPackageReference "SwiftMessages" */;
+			productName = SwiftMessages;
+		};
+		222C1D1C2B701C6E00586C30 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 222C1D1B2B701C6E00586C30 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+		222C1D212B70389500586C30 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 222C1D202B70389500586C30 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+		222C1D312B711CB700586C30 /* GoogleMaps */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 222C1D302B711CB600586C30 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */;
+			productName = GoogleMaps;
+		};
+		222C1D332B711CB700586C30 /* GoogleMapsBase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 222C1D302B711CB600586C30 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */;
+			productName = GoogleMapsBase;
+		};
+		222C1D352B711CB700586C30 /* GoogleMapsCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 222C1D302B711CB600586C30 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */;
+			productName = GoogleMapsCore;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 222C1CD72B6FC47A00586C30 /* Project object */;
+}
