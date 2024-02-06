@@ -18,7 +18,7 @@ struct CSVToJSONParser {
     
     func convertCSVtoJSON() -> Data? {
         let rows = csvString.components(separatedBy: "\n")
-        
+        var dataArray = [[String : Any]]()
         var rowData = [String : Any]()
 
         guard let columnNames = rows.first?.components(separatedBy: String(delimiter)) else {
@@ -38,11 +38,12 @@ struct CSVToJSONParser {
             for (index, column) in columns.enumerated() {
                 let key = columnNames[index]
                 rowData[key] = column
-            }            
+            }        
+            dataArray.append(rowData)
         }
         
         do {
-            let jsonData = try JSONSerialization.data(withJSONObject: rowData, options: .prettyPrinted)
+            let jsonData = try JSONSerialization.data(withJSONObject: dataArray, options: .prettyPrinted)
             return jsonData
         } catch {
             print("Ошибка при преобразовании в JSON: \(error.localizedDescription)")

@@ -35,7 +35,7 @@ class TrackDatasource {
         self.parameters = parameters
     }
     
-    func fetchTrackData(completion: @escaping(Result<TrackerModel, Error>) -> Void) {
+    func fetchTrackData(completion: @escaping(Result<[TrackerModel], Error>) -> Void) {
         
         AF.request(ApiNetwork.track.url, method: .post, parameters: parameters.getParameters(), encoding: URLEncoding.default)
             .validate()
@@ -64,7 +64,7 @@ class TrackDatasource {
                 }
                 
                 do {
-                    let trackerModel = try JSONDecoder().decode(TrackerModel.self, from: jsonData)
+                    let trackerModel = try JSONDecoder().decode([TrackerModel].self, from: jsonData)
                     
                     completion(.success(trackerModel))
                     

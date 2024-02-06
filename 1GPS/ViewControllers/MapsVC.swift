@@ -3,7 +3,7 @@
 //  1GPS
 //
 //  Created by Дима Самойленко on 05.02.2024.
-//  S124291S426047
+//  S326288S238561
 
 import UIKit
 import GoogleMaps
@@ -13,7 +13,7 @@ class MapsVC: UIViewController {
     
     static var receivedApi: String?
     
-    private var trackerData: TrackerModel?
+    private var trackerData: [TrackerModel]?
     
     private var id: Int?
     private var latitude: CLLocationDegrees?
@@ -30,30 +30,62 @@ class MapsVC: UIViewController {
     }
 
     private func setupLayout() {
-        
-        guard let trackerData = trackerData,
-              let latitude = CLLocationDegrees(trackerData.lat ?? ""),
-              let longitude = CLLocationDegrees(trackerData.lng ?? ""),
-              let id = trackerData.id,
-              let tlast = trackerData.tlast,
-              let tvalid = trackerData.tvalid,
-              let tarc = trackerData.tarc,
-              let azi = trackerData.azi,
-              let alt = trackerData.alt 
-        else { return }
+        guard let trackerData = trackerData else { return }
         
         let options = GMSMapViewOptions()
-        options.camera = GMSCameraPosition.camera(withLatitude: latitude / 1000000, longitude: longitude / 1000000, zoom: 6.0)
         options.frame = self.view.bounds
-        
         let mapView = GMSMapView(options: options)
         self.view.addSubview(mapView)
+        
+        var coordinates = [(latitude: Double, longitude: Double)]()
+        
+        for trackerModel in trackerData {
 
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: latitude / 1000000, longitude: longitude / 1000000)
-        marker.title = "ID: \(id)"
-        marker.icon = GMSMarker.markerImage(with: .blue)
-        marker.map = mapView
+            if let latitude = trackerModel.lat, let longitude = trackerModel.lng {
+                let coordinate = (Double(latitude) ?? 0 / 1000000, Double(longitude) ?? 0 / 1000000)
+                coordinates.append(coordinate)
+                
+                let marker = GMSMarker()
+                marker.position = CLLocationCoordinate2D(latitude: coordinate.0, longitude: coordinate.1)
+                marker.title = "ID: \(trackerModel.id ?? "")"
+                marker.icon = GMSMarker.markerImage(with: .blue)
+                marker.map = mapView
+            }
+        }
+        
+        if let boundingBox = findBoundingBox(for: coordinates) {
+            
+            let centerLatitude = (boundingBox.minLatitude + boundingBox.maxLatitude) / 2
+            let centerLongitude = (boundingBox.minLongitude + boundingBox.maxLongitude) / 2
+            
+            let latitudeDelta = boundingBox.maxLatitude - boundingBox.minLatitude
+            let longitudeDelta = boundingBox.maxLongitude - boundingBox.minLongitude
+            
+            let bounds = GMSCoordinateBounds(coordinate: CLLocationCoordinate2D(latitude: boundingBox.maxLatitude, longitude: boundingBox.minLongitude),
+                                              coordinate: CLLocationCoordinate2D(latitude: boundingBox.minLatitude, longitude: boundingBox.maxLongitude))
+            
+            let camera = mapView.camera(for: bounds, insets: UIEdgeInsets(top: 50, left: 50, bottom: 50, right: 50))
+            mapView.camera = camera ?? GMSCameraPosition.camera(withLatitude: centerLatitude, longitude: centerLongitude, zoom: 6.0)
+        }
+    }
+
+    
+    private func findBoundingBox(for coordinates: [(latitude: Double, longitude: Double)]) -> (minLatitude: Double, maxLatitude: Double, minLongitude: Double, maxLongitude: Double)? {
+        guard !coordinates.isEmpty else { return nil }
+        
+        var minLatitude = coordinates[0].latitude
+        var maxLatitude = coordinates[0].latitude
+        var minLongitude = coordinates[0].longitude
+        var maxLongitude = coordinates[0].longitude
+        
+        for coordinate in coordinates {
+            minLatitude = min(minLatitude, coordinate.latitude)
+            maxLatitude = max(maxLatitude, coordinate.latitude)
+            minLongitude = min(minLongitude, coordinate.longitude)
+            maxLongitude = max(maxLongitude, coordinate.longitude)
+        }
+        
+        return (minLatitude, maxLatitude, minLongitude, maxLongitude)
     }
     
     //MARK: API COMPLETION HANDLER
@@ -67,27 +99,29 @@ class MapsVC: UIViewController {
         trackData.fetchTrackData { response in
             switch response {
             case .success(let trackerData):
-                guard let latitude = trackerData.lat,
-                      let longitude = trackerData.lng,
-                      let id = trackerData.id,
-                      let tlast = trackerData.tlast,
-                      let tvalid = trackerData.tvalid,
-                      let tarc = trackerData.tarc,
-                      let azi = trackerData.azi,
-                      let alt = trackerData.alt else { return }
-                
-                self.id = Int(id)
-                self.tlast = Int(tlast)
-                self.tvalid = Int(tvalid)
-                self.tarc = Int(tarc)
-                self.azi = Int(azi)
-                self.alt = Int(alt)
-                self.trackerData = trackerData
-                self.latitude = CLLocationDegrees(latitude)
-                self.longitude = CLLocationDegrees(longitude)
-                
-                self.setupLayout()
-
+                trackerData.forEach { trackerModel in
+                    
+                    guard let latitude = trackerModel.lat,
+                          let longitude = trackerModel.lng,
+                          let id = trackerModel.id,
+                          let tlast = trackerModel.tlast,
+                          let tvalid = trackerModel.tvalid,
+                          let tarc = trackerModel.tarc,
+                          let azi = trackerModel.azi,
+                          let alt = trackerModel.alt else { return }
+                    
+                    self.id = Int(id)
+                    self.tlast = Int(tlast)
+                    self.tvalid = Int(tvalid)
+                    self.tarc = Int(tarc)
+                    self.azi = Int(azi)
+                    self.alt = Int(alt)
+                    self.trackerData = trackerData
+                    self.latitude = CLLocationDegrees(latitude)
+                    self.longitude = CLLocationDegrees(longitude)
+                    
+                    self.setupLayout()
+                }
             case .failure(let error):
                 print(error)
             }
