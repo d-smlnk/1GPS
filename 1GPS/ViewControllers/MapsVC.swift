@@ -3,7 +3,7 @@
 //  1GPS
 //
 //  Created by Дима Самойленко on 05.02.2024.
-//
+//  S124291S426047
 
 import UIKit
 import GoogleMaps
@@ -48,15 +48,19 @@ class MapsVC: UIViewController {
         
         let mapView = GMSMapView(options: options)
         self.view.addSubview(mapView)
-        
+
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2D(latitude: latitude / 1000000, longitude: longitude / 1000000)
+        marker.title = "ID: \(id)"
+        marker.icon = GMSMarker.markerImage(with: .blue)
         marker.map = mapView
     }
     
+    //MARK: API COMPLETION HANDLER
+    
     private func fetchPosition() {
         guard let receivedApi = MapsVC.receivedApi else { return }
-        let parameters = ParamsBuilder(apiKey: receivedApi, trackerID: 0, functionCode: 1, startTimeUNIX: 1508738400, endTimeUNIX: 1508770800)
+        let parameters = ParamsBuilder(apiKey: receivedApi, trackerID: 0, functionCode: 1)
         
         let trackData = TrackDatasource(parameters: parameters)
         
