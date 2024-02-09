@@ -11,9 +11,6 @@ import Lottie
 
 class MainVC: UIViewController {
 
-    //MARK: PROTOCOL VARIABLES
-    
-
     //MARK: - VARIABLES
     
     private var apiKeyTF: UITextField!
@@ -41,7 +38,7 @@ class MainVC: UIViewController {
         actionLabel.text = "Insert your API key"
         actionLabel.font = DS.Fonts.smallTitleFont
         
-        apiKeyTF = UITextField(image: DS.Images.apiKeyImage, placeholder: "Example: S124291S426047", contentType: .default, addBtn: true)
+        apiKeyTF = UITextField(image: DS.Images.apiKeyImage, placeholder: "Example: S326288S238561", contentType: .default, addBtn: true)
         apiKeyTF.backgroundColor = DS.Colors.additionalColor
         apiKeyTF.layer.cornerRadius = DS.SizeOFElements.customCornerRadius
         
@@ -101,7 +98,7 @@ class MainVC: UIViewController {
             
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             animationView.pause()
-            animationView.isHidden = true
+            animationBackgroundView.removeFromSuperview()
             
             let mainTabBarController = MainTabBarController()
             self.navigationController?.pushViewController(mainTabBarController, animated: true)
@@ -123,7 +120,7 @@ class MainVC: UIViewController {
 
 extension MainVC {
     
-    @objc func nextVC() {
+    @objc private func nextVC() {
         if apiKeyTF.text?.count ?? 0 == 14 {
             MenuVC.receivedApi = apiKeyTF.text
             MapsVC.receivedApi = apiKeyTF.text

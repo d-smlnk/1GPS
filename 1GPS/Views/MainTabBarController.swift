@@ -10,9 +10,7 @@ import UIKit
 import Lottie
 
 class MainTabBarController: UITabBarController {
-    
-    private var animationView: LottieAnimationView?
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         generateTabBar()
@@ -27,6 +25,7 @@ class MainTabBarController: UITabBarController {
             generateVC(vc: RouteTempVC(), title: "Track", image: DS.Images.temporaryRouteIcon),
             generateVC(vc: SimCardVC(), title: "SIM", image: DS.Images.simCard)
         ]
+        
         self.selectedIndex = 1
         navigationItem.hidesBackButton = true
     }
@@ -87,48 +86,10 @@ class MainTabBarController: UITabBarController {
     }
 }
 
-//MARK: - ANIMATION
-
-extension MainTabBarController {
-
-    private func launchScreen() {
-        let animationBackgroundView = UIView()
-        animationBackgroundView.backgroundColor = DS.Colors.additionalColor2
-        view.addSubview(animationBackgroundView)
-        
-        navigationItem.hidesBackButton = true
-        
-        animationView = .init(name: "loader")
-        
-        guard let animationView = animationView else { return }
-        animationView.loopMode = .playOnce
-        animationView.animationSpeed = 0.5
-        animationBackgroundView.addSubview(animationView)
-        
-        animationView.play()
-            
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            animationView.pause()
-            animationView.isHidden = true
-        }
-    
-        //MARK: - CONSTRAINTS OF ANIMATIONS
-        
-        animationBackgroundView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
-        
-        animationView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
-    }
-}
-
-
 //MARK: @objc METHODS
 
 extension MainTabBarController {
-   @objc func logout() {
+   @objc private func logout() {
        if let navigationController = self.navigationController {
            navigationController.popToRootViewController(animated: true)
        }

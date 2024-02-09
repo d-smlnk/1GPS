@@ -4,6 +4,7 @@
 //
 //  Created by Дима Самойленко on 05.02.2024.
 //  S326288S238561
+//  S124291S426047
 
 import UIKit
 import GoogleMaps
@@ -28,21 +29,23 @@ class MapsVC: UIViewController {
         super.viewDidLoad()
         fetchPosition()
     }
-
+    
     private func setupLayout() {
         guard let trackerData = trackerData else { return }
         
         let options = GMSMapViewOptions()
-        options.frame = self.view.bounds
+        options.frame = view.bounds
+        
         let mapView = GMSMapView(options: options)
-        self.view.addSubview(mapView)
+        view.addSubview(mapView)
         
         var coordinates = [(latitude: Double, longitude: Double)]()
         
         for trackerModel in trackerData {
 
-            if let latitude = trackerModel.lat, let longitude = trackerModel.lng {
-                let coordinate = (Double(latitude) ?? 0 / 1000000, Double(longitude) ?? 0 / 1000000)
+            if let latitude = Double(trackerModel.lat!), let longitude = Double(trackerModel.lng!) {
+                
+                let coordinate = (latitude / 1000000, longitude / 1000000)
                 coordinates.append(coordinate)
                 
                 let marker = GMSMarker()
@@ -53,39 +56,44 @@ class MapsVC: UIViewController {
             }
         }
         
-        if let boundingBox = findBoundingBox(for: coordinates) {
-            
-            let centerLatitude = (boundingBox.minLatitude + boundingBox.maxLatitude) / 2
-            let centerLongitude = (boundingBox.minLongitude + boundingBox.maxLongitude) / 2
-            
-            let latitudeDelta = boundingBox.maxLatitude - boundingBox.minLatitude
-            let longitudeDelta = boundingBox.maxLongitude - boundingBox.minLongitude
-            
-            let bounds = GMSCoordinateBounds(coordinate: CLLocationCoordinate2D(latitude: boundingBox.maxLatitude, longitude: boundingBox.minLongitude),
-                                              coordinate: CLLocationCoordinate2D(latitude: boundingBox.minLatitude, longitude: boundingBox.maxLongitude))
-            
-            let camera = mapView.camera(for: bounds, insets: UIEdgeInsets(top: 50, left: 50, bottom: 50, right: 50))
-            mapView.camera = camera ?? GMSCameraPosition.camera(withLatitude: centerLatitude, longitude: centerLongitude, zoom: 6.0)
-        }
+        let cameraBox = findCameraBox(for: coordinates)
+        
+        let camera = GMSCameraPosition(latitude: cameraBox.0, longitude: cameraBox.1, zoom: 5)
+        mapView.camera = camera
+    
     }
 
     
-    private func findBoundingBox(for coordinates: [(latitude: Double, longitude: Double)]) -> (minLatitude: Double, maxLatitude: Double, minLongitude: Double, maxLongitude: Double)? {
-        guard !coordinates.isEmpty else { return nil }
-        
-        var minLatitude = coordinates[0].latitude
-        var maxLatitude = coordinates[0].latitude
-        var minLongitude = coordinates[0].longitude
-        var maxLongitude = coordinates[0].longitude
-        
-        for coordinate in coordinates {
-            minLatitude = min(minLatitude, coordinate.latitude)
-            maxLatitude = max(maxLatitude, coordinate.latitude)
-            minLongitude = min(minLongitude, coordinate.longitude)
-            maxLongitude = max(maxLongitude, coordinate.longitude)
+    private func findCameraBox(for coordinates: [(latitude: Double, longitude: Double)]) -> (Double, Double) {
+        if !coordinates.isEmpty && coordinates.count > 1 {
+            
+            var minLatitude = coordinates[0].latitude
+            var maxLatitude = coordinates[0].latitude
+            
+            var minLongitude = coordinates[0].longitude
+            var maxLongitude = coordinates[0].longitude
+            
+            var centerLatitude = Double()
+            var centerLongitude = Double()
+            
+            for coordinate in coordinates {
+                minLatitude = min(minLatitude, coordinate.latitude)
+                maxLatitude = max(maxLatitude, coordinate.latitude)
+                minLongitude = min(minLongitude, coordinate.longitude)
+                maxLongitude = max(maxLongitude, coordinate.longitude)
+                
+                centerLatitude = (minLatitude + maxLatitude) / 2
+                centerLongitude = (minLongitude + maxLongitude) / 2
+            }
+            
+            return (centerLatitude, centerLongitude)
+        } else {
+            
+            guard let latitude = coordinates.first?.latitude else { return (0, 0) }
+            guard let longitude = coordinates.first?.longitude else { return (0, 0) }
+            
+            return (latitude, longitude)
         }
-        
-        return (minLatitude, maxLatitude, minLongitude, maxLongitude)
     }
     
     //MARK: API COMPLETION HANDLER
