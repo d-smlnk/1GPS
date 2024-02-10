@@ -30,9 +30,9 @@ class ColorInfoView: UIView {
         self.layer.cornerRadius = DS.SizeOFElements.customCornerRadius
         
         let colorArray = [
-            (UIImageView(), UIImage.circle(diameter: 25, color: UIColor(hex: 0xD04848) ?? UIColor()), "Good GSM signal"),
+            (UIImageView(), UIImage.circle(diameter: 25, color: .green), "Good GSM signal"),
             (UIImageView(), UIImage.circle(diameter: 25, color: UIColor(hex: 0xF8DE22) ?? UIColor()), "Average GSM signal"),
-            (UIImageView(), UIImage.circle(diameter: 25, color: .green), "Bad GSM signal"),
+            (UIImageView(), UIImage.circle(diameter: 25, color: UIColor(hex: 0xD04848) ?? UIColor()), "Bad GSM signal"),
             (UIImageView(), UIImage.circle(diameter: 25, color: .gray), "No GSM signal")
         ]
         
