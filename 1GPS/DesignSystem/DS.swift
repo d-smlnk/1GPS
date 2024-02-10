@@ -40,6 +40,9 @@ struct DS {
         static let mapIcon = UIImage(named: "mapIcon")
         static let temporaryRouteIcon = UIImage(named: "temporaryRouteIcon")
         static let simCard = UIImage(named: "simCard")
+        //buttons icons
+        static let chevronOpen = UIImage(named: "chevronOpen")
+        static let chevronClose = UIImage(named: "chevronClose")
     }
     
     struct Colors {

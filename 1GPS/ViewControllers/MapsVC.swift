@@ -12,9 +12,15 @@ import CoreLocation
 
 class MapsVC: UIViewController {
     
+    //MARK: - DELEGATED API STRING
+    
     static var receivedApi: String?
     
+    //MARK: - TRACKER MODEL ARRAY FOR API
+    
     private var trackerData: [TrackerModel]?
+    
+    // MARK: - VARIABLES
     
     private var id: Int?
     private var latitude: CLLocationDegrees?
@@ -24,7 +30,12 @@ class MapsVC: UIViewController {
     private var tarc: Int?
     private var azi: Int?
     private var alt: Int?
+    private var csq: Int?
     
+    // MARK: - COLOR INFO VIEW INSTANCE
+    
+    private let colorInfoView = ColorInfoView()
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchPosition()
@@ -43,7 +54,7 @@ class MapsVC: UIViewController {
         
         for trackerModel in trackerData {
 
-            if let latitude = Double(trackerModel.lat!), let longitude = Double(trackerModel.lng!) {
+            if let latitude = Double(trackerModel.lat ?? String()), let longitude = Double(trackerModel.lng ?? String()) {
                 
                 let coordinate = (latitude / 1000000, longitude / 1000000)
                 coordinates.append(coordinate)
@@ -51,8 +62,24 @@ class MapsVC: UIViewController {
                 let marker = GMSMarker()
                 marker.position = CLLocationCoordinate2D(latitude: coordinate.0, longitude: coordinate.1)
                 marker.title = "ID: \(trackerModel.id ?? "")"
-                marker.icon = GMSMarker.markerImage(with: .blue)
                 marker.map = mapView
+                
+                if let csq = Int(trackerModel.csq ?? String()) {
+                    switch csq {
+                    case 0...10:
+                        let markerIcon = UIImage.circle(diameter: 20, color: UIColor(hex: 0xD04848) ?? UIColor())
+                        marker.icon = markerIcon
+                    case 11...20:
+                        let markerIcon = UIImage.circle(diameter: 20, color: UIColor(hex: 0xF8DE22) ?? UIColor())
+                        marker.icon = markerIcon
+                    case 21...30:
+                        let markerIcon = UIImage.circle(diameter: 20, color: .green)
+                        marker.icon = markerIcon
+                    default:
+                        let markerIcon = UIImage.circle(diameter: 20, color: .gray)
+                        marker.icon = markerIcon
+                    }
+                }
             }
         }
         
@@ -60,6 +87,15 @@ class MapsVC: UIViewController {
         
         let camera = GMSCameraPosition(latitude: cameraBox.0, longitude: cameraBox.1, zoom: 5)
         mapView.camera = camera
+        
+        mapView.addSubview(colorInfoView)
+        
+        //MARK: - CONSTRAINTS
+        
+        colorInfoView.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.leading.equalToSuperview().inset(DS.Paddings.padding)
+        }
     
     }
 
@@ -116,7 +152,9 @@ class MapsVC: UIViewController {
                           let tvalid = trackerModel.tvalid,
                           let tarc = trackerModel.tarc,
                           let azi = trackerModel.azi,
-                          let alt = trackerModel.alt else { return }
+                          let alt = trackerModel.alt,
+                          let csq = trackerModel.csq
+                    else { return }
                     
                     self.id = Int(id)
                     self.tlast = Int(tlast)
@@ -127,6 +165,7 @@ class MapsVC: UIViewController {
                     self.trackerData = trackerData
                     self.latitude = CLLocationDegrees(latitude)
                     self.longitude = CLLocationDegrees(longitude)
+                    self.csq = Int(csq)
                     
                     self.setupLayout()
                 }

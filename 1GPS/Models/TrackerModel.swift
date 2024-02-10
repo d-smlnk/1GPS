@@ -22,5 +22,6 @@ struct TrackerModel: Decodable {
     let alt: String?//Int                        //    метры высота
     let lat6: String?//Int                       //    град.*600000 широта
     let lng6: String?//Int                       //    град.*600000 долгота
+    let csq: String?                             //    состояния датчика
 }
 

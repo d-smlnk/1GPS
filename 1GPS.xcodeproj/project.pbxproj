@@ -37,6 +37,8 @@
 		222C1D342B711CB700586C30 /* GoogleMapsBase in Frameworks */ = {isa = PBXBuildFile; productRef = 222C1D332B711CB700586C30 /* GoogleMapsBase */; };
 		222C1D362B711CB700586C30 /* GoogleMapsCore in Frameworks */ = {isa = PBXBuildFile; productRef = 222C1D352B711CB700586C30 /* GoogleMapsCore */; };
 		222C1D3F2B717EA900586C30 /* CSVToJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222C1D3E2B717EA900586C30 /* CSVToJSONParser.swift */; };
+		226C55532B76B80500044A6B /* UIImage_Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226C55522B76B80500044A6B /* UIImage_Circle.swift */; };
+		226C55552B76DEC800044A6B /* ColorInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226C55542B76DEC800044A6B /* ColorInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		222C1D2C2B710FE600586C30 /* UIImage_Resized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage_Resized.swift; sourceTree = "<group>"; };
 		222C1D2E2B71124A00586C30 /* SimCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimCardVC.swift; sourceTree = "<group>"; };
 		222C1D3E2B717EA900586C30 /* CSVToJSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVToJSONParser.swift; sourceTree = "<group>"; };
+		226C55522B76B80500044A6B /* UIImage_Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage_Circle.swift; sourceTree = "<group>"; };
+		226C55542B76DEC800044A6B /* ColorInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +171,7 @@
 				222C1D0B2B6FDE9200586C30 /* UITextField+Image.swift */,
 				222C1D0D2B6FDFB300586C30 /* UIViewController_DissmissKeyboard.swift */,
 				222C1D2C2B710FE600586C30 /* UIImage_Resized.swift */,
+				226C55522B76B80500044A6B /* UIImage_Circle.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -176,6 +181,7 @@
 			children = (
 				222C1D132B700AB200586C30 /* CustomAlertView.swift */,
 				222C1D232B703EA200586C30 /* MainTabBarController.swift */,
+				226C55542B76DEC800044A6B /* ColorInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -284,11 +290,13 @@
 				222C1CE32B6FC47A00586C30 /* AppDelegate.swift in Sources */,
 				222C1D3F2B717EA900586C30 /* CSVToJSONParser.swift in Sources */,
 				222C1D2D2B710FE600586C30 /* UIImage_Resized.swift in Sources */,
+				226C55552B76DEC800044A6B /* ColorInfoView.swift in Sources */,
 				222C1D0C2B6FDE9200586C30 /* UITextField+Image.swift in Sources */,
 				222C1D2F2B71124A00586C30 /* SimCardVC.swift in Sources */,
 				222C1D242B703EA200586C30 /* MainTabBarController.swift in Sources */,
 				222C1D142B700AB200586C30 /* CustomAlertView.swift in Sources */,
 				222C1D102B6FFB4500586C30 /* MenuVC.swift in Sources */,
+				226C55532B76B80500044A6B /* UIImage_Circle.swift in Sources */,
 				222C1D2B2B71086200586C30 /* RouteTempVC.swift in Sources */,
 				222C1D0E2B6FDFB300586C30 /* UIViewController_DissmissKeyboard.swift in Sources */,
 				222C1D0A2B6FDB4900586C30 /* UIColor_HEX.swift in Sources */,
