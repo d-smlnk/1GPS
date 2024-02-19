@@ -1,30 +1,29 @@
 //
-//  TrackerListTVC.swift
+//  SimInfoTVC.swift
 //  1GPS
 //
-//  Created by Дима Самойленко on 14.02.2024.
-//  
+//  Created by Дима Самойленко on 19.02.2024.
+//
 
 import UIKit
-import CoreLocation
 
-class TrackerListTVC: UITableViewCell {
+class SimInfoTVC: UITableViewCell {
     
     //MARK: - reuseIdentifier
     
-    static let reuseIdentifier = "TrackerListTVC"
+    static let reuseIdentifier = "SimInfoTVC"
     
     //MARK: - Tracker model
     
     var trackerModel: TrackerModel?
-    var trackerNameModel: TrackerModel?
     
     //MARK: - INSTANTS
     
     private let nameLbl = UILabel()
     private let idLbl = UILabel()
-    private let addressLbl = UILabel()
-        
+    private let numLbl = UILabel()
+    private let balanceLbl = UILabel()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupLayout()
@@ -39,27 +38,29 @@ class TrackerListTVC: UITableViewCell {
     private func setupLayout() {
         backgroundColor = .clear
         selectionStyle = .none
-
+        
         let customView = UIView()
         customView.backgroundColor = DS.Colors.secondaryColor
         customView.layer.cornerRadius = DS.SizeOFElements.customCornerRadius
         addSubview(customView)
         
-        nameLbl.numberOfLines = 0
-        nameLbl.setContentHuggingPriority(.required, for: .vertical)
-        nameLbl.lineBreakMode = .byWordWrapping
+        [nameLbl, numLbl, balanceLbl].forEach {
+            $0.numberOfLines = 0
+            $0.setContentHuggingPriority(.required, for: .vertical)
+            $0.lineBreakMode = .byWordWrapping
+        }
         
         let initialsCV = UIStackView(arrangedSubviews: [idLbl, nameLbl])
         initialsCV.distribution = .fillEqually
         initialsCV.axis = .vertical
-
-        addressLbl.numberOfLines = 0
-        addressLbl.setContentHuggingPriority(.required, for: .vertical)
-        addressLbl.lineBreakMode = .byWordWrapping
+            
+        let simSV = UIStackView(arrangedSubviews: [numLbl, balanceLbl])
+        simSV.axis = .vertical
+        simSV.distribution = .fillEqually
         
-        let commonSV = UIStackView(arrangedSubviews: [initialsCV, addressLbl])
+        let commonSV = UIStackView(arrangedSubviews: [initialsCV, simSV])
         commonSV.axis = .horizontal
-        commonSV.distribution = .fill
+        commonSV.distribution = .fillEqually
         customView.addSubview(commonSV)
         
         //MARK: - CONSTRAINTS
@@ -83,24 +84,11 @@ class TrackerListTVC: UITableViewCell {
     //MARK: - CONFIGURE CELL DATA
     
     func configure() {
-        idLbl.text = "ID: \(trackerModel?.id ?? "")"
-        nameLbl.text = "Tracker alias:\n \(trackerNameModel?.name ?? "")"
-        
-        guard let lat = trackerModel?.lat, let lng = trackerModel?.lng else { return }
-        
-        let addressConverter = AddressFromCoordinates(latitude: (Double(lat) ?? Double()) / 1000000, longitude: (Double(lng) ?? Double()) / 1000000)
-        
-        addressConverter.getAddressFromCoordinates() { address in
-            
-            switch address {
-            case .some(let address):
-                DispatchQueue.main.async {
-                    self.addressLbl.text = "Address: \(address)"
-                }
-            case .none:
-                print("Failed to get address")
-            }
-        }
+        idLbl.text = "ID: \(trackerModel?.id ?? "No ID")"
+        nameLbl.text = "Tracker name:\n\(trackerModel?.reserved ?? "No Name")"
+        numLbl.text = "SIM Number:\n\(trackerModel?.num ?? "No number")"
+        balanceLbl.text = "SIM Balance:\n\(trackerModel?.balance ?? "0")"
+
     }
     
 }

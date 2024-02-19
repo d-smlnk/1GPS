@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		221EE0CA2B837EF800062065 /* SimInfoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221EE0C92B837EF800062065 /* SimInfoTVC.swift */; };
 		222C1CE32B6FC47A00586C30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222C1CE22B6FC47A00586C30 /* AppDelegate.swift */; };
 		222C1CE52B6FC47A00586C30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222C1CE42B6FC47A00586C30 /* SceneDelegate.swift */; };
 		222C1CE72B6FC47A00586C30 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222C1CE62B6FC47A00586C30 /* MainVC.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		221EE0C92B837EF800062065 /* SimInfoTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimInfoTVC.swift; sourceTree = "<group>"; };
 		222C1CDF2B6FC47A00586C30 /* 1GPS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 1GPS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		222C1CE22B6FC47A00586C30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		222C1CE42B6FC47A00586C30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				226C55582B7D0C5B00044A6B /* TrackerListTVC.swift */,
+				221EE0C92B837EF800062065 /* SimInfoTVC.swift */,
 			);
 			path = TV_Cells;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				222C1D0E2B6FDFB300586C30 /* UIViewController_DissmissKeyboard.swift in Sources */,
 				222C1D0A2B6FDB4900586C30 /* UIColor_HEX.swift in Sources */,
 				222C1CFA2B6FC94400586C30 /* TrackerModel.swift in Sources */,
+				221EE0CA2B837EF800062065 /* SimInfoTVC.swift in Sources */,
 				222C1CE52B6FC47A00586C30 /* SceneDelegate.swift in Sources */,
 				222C1D262B7107B900586C30 /* MapsVC.swift in Sources */,
 			);

@@ -19,13 +19,6 @@ class TrackerListVC: UIViewController {
     private var trackerLocationData: [TrackerModel]?
     private var trackerNameData: [TrackerModel]?
     
-    // MARK: - VARIABLES
-    
-    private var id: Int?
-    private var name: String?
-    private var latitude: CLLocationDegrees?
-    private var longitude: CLLocationDegrees?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchTrackerlist()
@@ -63,17 +56,7 @@ class TrackerListVC: UIViewController {
             switch response {
             case .success(let trackerData):
                 trackerData.forEach { trackerModel in
-                    
-                    guard let id = trackerModel.id,
-                          let latitude = trackerModel.lat,
-                          let longitude = trackerModel.lng
-                    else { return }
-                    
                     self.trackerLocationData = trackerData
-                    self.id = Int(id)
-                    self.latitude = CLLocationDegrees(latitude)
-                    self.longitude = CLLocationDegrees(longitude)
-                    
                 }
                 self.fetchTrackName()
                 
@@ -94,11 +77,6 @@ class TrackerListVC: UIViewController {
             switch response {
             case .success(let trackerNameData):
                 trackerNameData.forEach { trackerModel in
-                    
-                    guard let name = trackerModel.name
-                    else { return }
-                    
-                    self.name = name
                     self.trackerNameData = trackerNameData
                 }
                 self.setupLayout()
