@@ -39,6 +39,8 @@
 		222C1D3F2B717EA900586C30 /* CSVToJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222C1D3E2B717EA900586C30 /* CSVToJSONParser.swift */; };
 		226C55532B76B80500044A6B /* UIImage_Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226C55522B76B80500044A6B /* UIImage_Circle.swift */; };
 		226C55552B76DEC800044A6B /* ColorInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226C55542B76DEC800044A6B /* ColorInfoView.swift */; };
+		226C55592B7D0C5B00044A6B /* TrackerListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226C55582B7D0C5B00044A6B /* TrackerListTVC.swift */; };
+		226C555B2B7E49FE00044A6B /* AddressFromCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226C555A2B7E49FE00044A6B /* AddressFromCoordinates.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +70,8 @@
 		222C1D3E2B717EA900586C30 /* CSVToJSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVToJSONParser.swift; sourceTree = "<group>"; };
 		226C55522B76B80500044A6B /* UIImage_Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage_Circle.swift; sourceTree = "<group>"; };
 		226C55542B76DEC800044A6B /* ColorInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorInfoView.swift; sourceTree = "<group>"; };
+		226C55582B7D0C5B00044A6B /* TrackerListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerListTVC.swift; sourceTree = "<group>"; };
+		226C555A2B7E49FE00044A6B /* AddressFromCoordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressFromCoordinates.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +164,7 @@
 				222C1D022B6FCE2B00586C30 /* TrackDatasource.swift */,
 				222C1D062B6FD6A200586C30 /* ParamsBuilder.swift */,
 				222C1D3E2B717EA900586C30 /* CSVToJSONParser.swift */,
+				226C555A2B7E49FE00044A6B /* AddressFromCoordinates.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -179,9 +184,8 @@
 		222C1D122B700A9400586C30 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				222C1D132B700AB200586C30 /* CustomAlertView.swift */,
-				222C1D232B703EA200586C30 /* MainTabBarController.swift */,
-				226C55542B76DEC800044A6B /* ColorInfoView.swift */,
+				226C55572B7D0C2700044A6B /* CommonViews */,
+				226C55562B7D0C1300044A6B /* TV_Cells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -191,6 +195,24 @@
 			children = (
 			);
 			path = Methods;
+			sourceTree = "<group>";
+		};
+		226C55562B7D0C1300044A6B /* TV_Cells */ = {
+			isa = PBXGroup;
+			children = (
+				226C55582B7D0C5B00044A6B /* TrackerListTVC.swift */,
+			);
+			path = TV_Cells;
+			sourceTree = "<group>";
+		};
+		226C55572B7D0C2700044A6B /* CommonViews */ = {
+			isa = PBXGroup;
+			children = (
+				222C1D132B700AB200586C30 /* CustomAlertView.swift */,
+				222C1D232B703EA200586C30 /* MainTabBarController.swift */,
+				226C55542B76DEC800044A6B /* ColorInfoView.swift */,
+			);
+			path = CommonViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,6 +308,8 @@
 				222C1D032B6FCE2B00586C30 /* TrackDatasource.swift in Sources */,
 				222C1D072B6FD6A200586C30 /* ParamsBuilder.swift in Sources */,
 				222C1D052B6FD52900586C30 /* DS.swift in Sources */,
+				226C55592B7D0C5B00044A6B /* TrackerListTVC.swift in Sources */,
+				226C555B2B7E49FE00044A6B /* AddressFromCoordinates.swift in Sources */,
 				222C1D292B71081700586C30 /* TrackerListVC.swift in Sources */,
 				222C1CE32B6FC47A00586C30 /* AppDelegate.swift in Sources */,
 				222C1D3F2B717EA900586C30 /* CSVToJSONParser.swift in Sources */,

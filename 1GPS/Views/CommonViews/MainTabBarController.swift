@@ -38,6 +38,12 @@ class MainTabBarController: UITabBarController {
     }
     
     private func setTabBarAppearance() {
+        let appearance = tabBar.standardAppearance
+        appearance.shadowImage = nil
+        appearance.shadowColor = nil
+        appearance.backgroundEffect = nil
+        appearance.backgroundColor = .clear
+        tabBar.standardAppearance = appearance
         
         let positionOnX: CGFloat = 10
         let positionOnY: CGFloat = 14

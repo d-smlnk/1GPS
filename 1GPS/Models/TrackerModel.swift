@@ -9,6 +9,7 @@ import Foundation
 
 struct TrackerModel: Decodable {
     let id: String?// UInt
+    var name: String?                            //    имя трекера
     let km10: String?//Double                    //    км*10 пробег за выбранный интервал
     let maxspeed: String?//Double                //    км/ч макс.скорость за выбранный интервал
     let enginetime: String?//Double              //    сек работа двигателя за выбранный интервал

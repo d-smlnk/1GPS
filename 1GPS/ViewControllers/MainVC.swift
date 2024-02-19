@@ -124,6 +124,7 @@ extension MainVC {
         if apiKeyTF.text?.count ?? 0 == 14 {
             MenuVC.receivedApi = apiKeyTF.text
             MapsVC.receivedApi = apiKeyTF.text
+            TrackerListVC.receivedApi = apiKeyTF.text
             
             if let api = apiKeyTF.text {
                 let parameters = ParamsBuilder(apiKey: api)

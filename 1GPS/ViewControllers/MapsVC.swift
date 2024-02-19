@@ -72,7 +72,7 @@ class MapsVC: UIViewController {
                     case 11...20:
                         let markerIcon = UIImage.circle(diameter: 20, color: UIColor(hex: 0xF8DE22) ?? UIColor())
                         marker.icon = markerIcon
-                    case 21...30:
+                    case 21...31:
                         let markerIcon = UIImage.circle(diameter: 20, color: .green)
                         marker.icon = markerIcon
                     default:
@@ -166,9 +166,10 @@ class MapsVC: UIViewController {
                     self.latitude = CLLocationDegrees(latitude)
                     self.longitude = CLLocationDegrees(longitude)
                     self.csq = Int(csq)
-                    
-                    self.setupLayout()
                 }
+                
+                self.setupLayout()
+
             case .failure(let error):
                 print(error)
             }

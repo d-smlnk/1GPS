@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-class ParamsBuilder {
+struct ParamsBuilder {
     
     private let apiKey: String
     private let trackerID: Int

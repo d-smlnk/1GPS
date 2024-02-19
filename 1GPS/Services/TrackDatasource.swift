@@ -27,7 +27,7 @@ enum ErrorMessage: Error {
     case message(_ error: Error)
 }
 
-class TrackDatasource {
+final class TrackDatasource {
     
     private let parameters: ParamsBuilder
     
@@ -70,7 +70,7 @@ class TrackDatasource {
                     
                 } catch {
                     completion(.failure(ErrorMessage.message(error)))
-                    print("Ошибка декодирования JSON: \(error)")
+                    print("Decoding JSON error: \(error)")
                 }
             }
     }
